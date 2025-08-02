@@ -1,68 +1,107 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1c1c1e;
+  color: #f5f5f5;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* App container */
+.app-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #ffdd57;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Car cards container */
+.car-list {
+  display: flex;
+  flex-wrap: wrap;        /* allow cards to wrap to next line */
+  gap: 1.5rem;            /* space between cards */
+  justify-content: flex-start;
+  padding: 0 1rem;
+}
+
+/* Each car card */
+.car-list > * {
+  flex: 1 1 280px;        /* base width 280px, flexible grow/shrink */
+  max-width: 320px;       /* max width so cards don’t stretch too wide */
+  background-color: #2a2a2d;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Edit form section */
+.edit-car-form {
+  background-color: #2c2c2e;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.edit-car-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.edit-car-form input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 1rem;
+  background-color: #3a3a3c;
+  color: #fff;
+}
+
+.edit-car-form button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  margin-right: 0.5rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.edit-car-form .save {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-car-form .save:hover {
+  background-color: #43a047;
+}
+
+.edit-car-form .cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-car-form .cancel:hover {
+  background-color: #d32f2f;
 }
