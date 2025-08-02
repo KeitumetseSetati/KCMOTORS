@@ -1,10 +1,11 @@
 
-require('dotenv').config();
-
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const carRoutes = require("./routes/carRoutes");
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
+
 
 const app = express();
 connectDB();
